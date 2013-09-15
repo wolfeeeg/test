@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />
+    <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<div id="wrapper">
+    	<div id="header">
+    		<div id="wrap-header">
+                <div class="content-header">
+                    <div onclick="toggleAdd()" class="top-button" id="qAdd">
+                        <a title="Добавить" href="javascript:void(0);">Добавить</a>
+                    </div>
+                    <div class="top-button">
+                        <a title="Обновить" href="javascript:void(0);" onclick="Clear()">Обновить</a>
+                    </div>
+                    <br class="clear" />
+                    <div class="search">
+                        <a class="loop" href="javascript:void(0);" title="Искать"></a>
+                        <input class="search-plank"  onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" value="Событие, дата или участник" />
+                        <span class="close" onclick="searchClose()"></span>
+                        <br class="clear" />
+                        <div class="search-result">
+                            <span class="uptreug"></span>
+                            <div class="plank">
+                                <div class="padding">
+                                    <ul class="result"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="QuickAddNote">
+                        <span class="uptreug"></span>
+                        <div class="QuickAdd">
+                            <div class="padding">
+                                <span class="close" onclick="hideAdd()"></span>
+                                <input type="text" class="add" value="5 марта 2013, Название события" onfocus="$('.line').hide();if(this.value==this.defaultValue)this.value='';" onblur="$('.line').show();if(this.value=='')this.value=this.defaultValue;" />
+                                <input type="submit" onclick="QuickAdd()" class="sub" value="Создать" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    	</div><!-- #header-->
+    
+    	<div id="content">
+    		<div class="wrap-content">
+                <div class="date-panel">
+                    <span class="prev" onclick="PrevMonth()"></span>
+                    <span class="now-date"></span>
+                    <span class="next" onclick="NextMonth()"></span>
+                    <span class="now" onclick="GoToCurrentDay()">Сегодня</span>
+                    <br class="clear" />
+                </div>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="numb"><span class="day-week">Понедельник, </span><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="day-week">Вторник, </span><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="day-week">Среда, </span><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="day-week">Четверг, </span><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="day-week">Пятница, </span><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="day-week">Суббота, </span><span class="number"></span></div>
+                            </td>
+                            <td class="lasttd">
+                                <div class="numb"><span class="day-week">Воскресенье, </span><span class="number"></span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td class="lasttd">
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td class="lasttd">
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td class="lasttd">
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td class="lasttd">
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                        </tr>
+                        <tr class="trlast">
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td>
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                            <td class="lasttd">
+                                <div class="numb"><span class="number"></span></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    	</div><!-- #content-->
+</div><!-- #wrapper -->
+<div class="HideForNode">
+    <div class="addnoteRight">
+            <span class="treug"></span>
+            <div class="note">
+                <div class="padd">
+                    <span class="close"></span>
+                    <input id="blur" class="event" type="text" title="Событие" value="Событие" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
+                    <h1 class="hiddenForInput"></h1>
+                    <input id="blur" class="date" type="text" title="День, месяц, год" value="День, месяц, год" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"  />
+                    <span class="hiddenForInput hiddenForInputDate"></span>
+                    <input id="blur" class="name" type="text" title="Имена участников" value="Имена участников" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"  />
+                    <div class="hiddenForInput"></div>
+                    <textarea placeholder="Описание" onfocus="placeholder='';" onblur="placeholder='Описание';" ></textarea>
+                    <br />
+                    <input class="go" type="submit" value="Готово"/><input class="del" type="submit" value="Удалить"/>
+
+                </div>
+            </div>
+    </div>
+</div>
+<div class="HideForNode2">
+    <div class="addnoteLeft">
+            <span class="treug"></span>
+            <div class="note">
+                <div class="padd">
+                    <span class="close"></span>
+                    <input id="blur" class="event" type="text" title="Событие" value="Событие" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
+                    <h1 class="hiddenForInput"></h1>
+                    <input id="blur" class="date" type="text" title="День, месяц, год" value="День, месяц, год" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"  />
+                    <span class="hiddenForInput hiddenForInputDate"></span>
+                    <input id="blur" class="name" type="text" title="Имена участников" value="Имена участников" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"  />
+                    <div class="hiddenForInput"></div>
+                    <textarea placeholder="Описание" onfocus="placeholder='';" onblur="placeholder='Описание';" ></textarea>
+                    <br />
+                    <input class="go" type="submit" value="Готово"/><input class="del" type="submit" value="Удалить"/>
+                </div>
+            </div>
+    </div>
+</div>
+<script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
